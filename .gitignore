@@ -1,0 +1,91 @@
+# ==========================================
+# 1. Dependencias y paquetes
+# ==========================================
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ==========================================
+# 2. Entornos y caché de Python
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.env
+.venv
+env/
+venv/
+ENV/
+.ipynb_checkpoints/
+
+# ==========================================
+# 3. Compilados de C / C++ y CMake
+# ==========================================
+*.o
+*.obj
+*.out
+*.app
+*.bin
+*.d
+build/
+bin/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# ==========================================
+# 4. Modelos de Machine Learning y pesos
+# ==========================================
+*.pt
+*.pth
+*.pkl
+*.pickle
+*.h5
+*.onnx
+*.npy
+*.npz
+
+# ==========================================
+# 5. Archivos pesados, medios y datasets
+# ==========================================
+# Video
+*.mp4
+*.MP4
+*.mov
+*.MOV
+*.avi
+*.mkv
+
+# Comprimidos
+*.zip
+*.tar
+*.tar.gz
+*.gz
+*.7z
+*.rar
+
+# Metadatos del sistema (Windows / WSL)
+*Zone.Identifier
+*Identifier
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+# Pesos y artefactos de Deep Learning
+*.pt
+*.pth
+*.onnx
+*.ckpt
+artifacts/
+models/*.pt
+models/*.pth
+
+# Datasets locales
+data/
+datasets/
