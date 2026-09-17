@@ -6,6 +6,8 @@ from models.mlp import MLP
 from engine.trainer import fit, evaluate_one_epoch
 from utils.plotting import plot_history
 from callbacks.early_stopping import EarlyStopping
+from models.cnn import CNN
+
 
 
 def main() -> None:
@@ -36,9 +38,9 @@ def main() -> None:
         val_split=0.2
         ) #obtener los dataloaders
 
-    ##modelo
-    model = MLP()
-    model = model.to(device) #mover el modelo al dispositivo
+    #model = MLP() #Modelo
+    model = CNN() #Modelo
+    model = model.to(device)
 
     #entrenamiento
     criterion = nn.CrossEntropyLoss() #función de pérdida
