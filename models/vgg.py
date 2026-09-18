@@ -12,7 +12,7 @@ class VGG11(BaseNN):
         for parameter in self.network.features.parameters():
             parameter.requires_grad = False
 
-        in_features = self.network.classifier.in_features
+        in_features = self.network.classifier[-1].in_features
         self.network.classifier[-1] = nn.Linear(in_features, num_classes)
 
         self.register_buffer(
@@ -28,12 +28,12 @@ class VGG11(BaseNN):
 
         self.register_buffer(
             "imagenet_std",
-            torch.tensor([0.485, 0.456, 0.406]).view(1, 3, 1, 1)
+            torch.tensor([0.229, 0.224, 0.225]).view(1, 3, 1, 1)
         )
 
         self.register_buffer(
             "imagenet_mean",
-            torch.tensor([0.229, 0.224, 0.225]).view(1, 3, 1, 1)
+            torch.tensor([0.485, 0.456, 0.406]).view(1, 3, 1, 1)
         )
 
     def forward(self, x):
