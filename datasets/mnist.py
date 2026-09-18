@@ -3,7 +3,7 @@ import torch
 from torch.utils.data import DataLoader, random_split
 from torchvision import datasets,transforms
 
-def get_mnist_loaders(data_dir, batch_size=64, val_split = 0.2): #Obtener los datos de entrenamiento
+def get_mnist_dataset(data_dir, batch_size=64, val_split = 0.2): #Obtener los datos de entrenamiento
 	#Data augmentation - Aumentar los datos de entrenamiento
 	train_transforms = transforms.Compose([
 		transforms.RandomRotation(degrees=10), #Rotar la imagen

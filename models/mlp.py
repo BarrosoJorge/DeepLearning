@@ -1,9 +1,10 @@
 import torch.nn as nn
+from base import BaseNN
 
 #          (herencia)
-class MLP(nn.Module): #Desacoplamiento 
+class MLP(BaseNN): #Desacoplamiento 
     def __init__(self):
-        super(MLP, self).__init__()
+        super(MLP, self).__init__(name="mlp") #Llamada al constructor de la clase base
         self.network = nn.Sequential(
             nn.Flatten(), #Capa de aplanamiento
             nn.Linear(28 * 28, 128), # (caracteristicas de entrada, caracteristicas de salida)

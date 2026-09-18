@@ -1,8 +1,9 @@
 import torch.nn as nn
+from base import BaseNN
 
-class CNN(nn.Module):
+class CNN(BaseNN):
     def __init__(self):
-        super(CNN, self).__init__()
+        super(CNN, self).__init__(name="cnn")
 
         self.features = nn.Sequential(
             nn.Conv2d(1, 16, kernel_size=3, stride=1, padding=1), #color, no.kernel, tamanho do kernel, saltos, agregar capa de pixeles

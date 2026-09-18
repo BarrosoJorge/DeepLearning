@@ -7,6 +7,7 @@ from engine.trainer import fit, evaluate_one_epoch
 from utils.plotting import plot_history
 from callbacks.early_stopping import EarlyStopping
 from models.cnn import CNN
+from models.factory import create_model
 
 
 
@@ -39,7 +40,7 @@ def main() -> None:
         ) #obtener los dataloaders
 
     #model = MLP() #Modelo
-    model = CNN() #Modelo
+    model = create_model("vgg11") #Modelo
     model = model.to(device)
 
     #entrenamiento
